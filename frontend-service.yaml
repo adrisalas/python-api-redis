@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: frontend
   labels:
-    app: python-api
+    app: python-api-redis
     tier: frontend
 spec:
   # comment or delete the following line if you want to use a LoadBalancer
@@ -14,5 +14,5 @@ spec:
   ports:
   - port: 80
   selector:
-    app: python-api
+    app: python-api-redis
     tier: frontend
