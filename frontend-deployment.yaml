@@ -1,0 +1,25 @@
+apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: python-api
+      tier: frontend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: python-api
+        tier: frontend
+    spec:
+      containers:
+      - name: python-api-redis
+        image: adrisalas/python-api-redis
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
