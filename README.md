@@ -7,7 +7,7 @@ Simple project to serve as a basis for creating APIs in Python using Flask and R
 ## Installation
 
 ```bash
-git clone https://github.com/adrisalas/python-sqlite-redis.git
+git clone https://github.com/adrisalas/python-api-redis.git
 docker swarm init
 docker stack deploy -c docker-compose.yml getstartedlab
 ```
